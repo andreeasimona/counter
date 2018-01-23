@@ -1,11 +1,8 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Button, Divider } from 'react-native-elements';
-import { styles } from './style.js';
-import actionTypes from './actionTypes.js';
-import reducer from './reducer.js';
-import store from './store.js';
-
+import { styles } from './style/style.js';
+import store from './store/store.js';
 export default class App extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +12,6 @@ export default class App extends React.Component {
         this.onHandlerDecrease = this.onHandlerDecrease.bind(this);
         this.onHandlerIncrease = this.onHandlerIncrease.bind(this);
     }
-
     onHandlerDecrease() {
         store.dispatch({ type: 'DECREMENT' });
         this.setState({ count: store.getState().count });
